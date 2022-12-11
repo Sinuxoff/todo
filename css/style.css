@@ -333,3 +333,28 @@ body {
     transform: scale(1.02);
     background: #21bd31;
 }
+@media (max-width: 500px) {
+    body {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .todolist_Body {
+        max-height: 150x;
+        min-height: 150px;
+        background: #ffffff;
+        overflow-x: hidden;
+        overflow-y: auto;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.16);
+        border-radius: 30px;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .task_List_Day {
+        margin-left: 15px;
+
+    }
+
+
+}
