@@ -89,29 +89,3 @@
         opacity: 1;
     }
 }
-
-
-@media (max-width: 500px) {
-    body {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .todolist_Body {
-        max-height: 150x;
-        min-height: 150px;
-        background: #ffffff;
-        overflow-x: hidden;
-        overflow-y: auto;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.16);
-        border-radius: 30px;
-        padding: 25px 10px 55px 10px
-    }
-
-    .task_List_Day {
-        margin-left: 15px;
-
-    }
-
-
-}
