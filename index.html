@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="task_manager">
+        <div class="create_new_task_body">
+            <div class="create_new_task_container">
+                <svg class="add_new_task_button" width="15" height="15" viewBox="0 0 10 10" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M9.28571 5.71429H5.71429V9.28571C5.71429 9.47515 5.63903 9.65684 5.50508 9.79079C5.37112 9.92475 5.18944 10 5 10C4.81056 10 4.62888 9.92475 4.49492 9.79079C4.36097 9.65684 4.28571 9.47515 4.28571 9.28571V5.71429H0.714286C0.524845 5.71429 0.343164 5.63903 0.20921 5.50508C0.075255 5.37112 0 5.18944 0 5C0 4.81056 0.075255 4.62888 0.20921 4.49492C0.343164 4.36097 0.524845 4.28571 0.714286 4.28571H4.28571V0.714286C4.28571 0.524845 4.36097 0.343164 4.49492 0.209209C4.62888 0.0752547 4.81056 0 5 0C5.18944 0 5.37112 0.0752547 5.50508 0.209209C5.63903 0.343164 5.71429 0.524845 5.71429 0.714286V4.28571H9.28571C9.47515 4.28571 9.65684 4.36097 9.79079 4.49492C9.92475 4.62888 10 4.81056 10 5C10 5.18944 9.92475 5.37112 9.79079 5.50508C9.65684 5.63903 9.47515 5.71429 9.28571 5.71429V5.71429Z"
+                        fill="#1CA329" />
+                </svg>
+                <p class="new_task_text">
+                    Add a task
+                </p>
+            </div>
+
+        </div>
+        <div class="todolist_Body">
+            <div class="todolist_container">
+                <div class="task_List_Day">
+                    <p class="list_Day">
+                        Today
+                    </p>
+                    <p class="curentDayDate">
+
+                    </p>
+                </div>
+                <div class="tasks_list">
+
+                    <div class="add_new_task">
+                        <svg class="add_new_task_button" width="15" height="15" viewBox="0 0 10 10" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M9.28571 5.71429H5.71429V9.28571C5.71429 9.47515 5.63903 9.65684 5.50508 9.79079C5.37112 9.92475 5.18944 10 5 10C4.81056 10 4.62888 9.92475 4.49492 9.79079C4.36097 9.65684 4.28571 9.47515 4.28571 9.28571V5.71429H0.714286C0.524845 5.71429 0.343164 5.63903 0.20921 5.50508C0.075255 5.37112 0 5.18944 0 5C0 4.81056 0.075255 4.62888 0.20921 4.49492C0.343164 4.36097 0.524845 4.28571 0.714286 4.28571H4.28571V0.714286C4.28571 0.524845 4.36097 0.343164 4.49492 0.209209C4.62888 0.0752547 4.81056 0 5 0C5.18944 0 5.37112 0.0752547 5.50508 0.209209C5.63903 0.343164 5.71429 0.524845 5.71429 0.714286V4.28571H9.28571C9.47515 4.28571 9.65684 4.36097 9.79079 4.49492C9.92475 4.62888 10 4.81056 10 5C10 5.18944 9.92475 5.37112 9.79079 5.50508C9.65684 5.63903 9.47515 5.71429 9.28571 5.71429V5.71429Z"
+                                fill="#1CA329" />
+                        </svg>
+                        <p class="new_task_text">
+                            Add a task
+                        </p>
+
+                    </div>
+
+                    <div class="new_task_create_window_body">
+                        <div class="new_task_create_window_container">
+                            <input placeholder="Task name" type="text" class="TaskNameSet">
+                            <input placeholder="Desription (optional)" type="text" class="TaskDesriptionSet">
+                            <input class="TaskDaySet" type="date">
+                            <!-- <input type="time" class="TaskTimeSet"> -->
+                            <button title="Set Prioriry" class="setPriority"><svg class="setPriorityIcon" width="20"
+                                    height="20" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M10.9625 4.75L13.5875 1.46875C13.6759 1.35832 13.7313 1.22512 13.7473 1.08455C13.7632 0.94398 13.7391 0.801765 13.6776 0.674326C13.6162 0.546887 13.52 0.439422 13.4001 0.364339C13.2802 0.289257 13.1415 0.249619 13 0.250003H1.5C1.30109 0.250003 1.11032 0.32902 0.96967 0.469673C0.829018 0.610325 0.75 0.80109 0.75 1V11.5C0.75 11.6989 0.829018 11.8897 0.96967 12.0303C1.11032 12.171 1.30109 12.25 1.5 12.25C1.69891 12.25 1.88968 12.171 2.03033 12.0303C2.17098 11.8897 2.25 11.6989 2.25 11.5V9.25H13C13.1415 9.25039 13.2802 9.21075 13.4001 9.13567C13.52 9.06058 13.6162 8.95312 13.6776 8.82568C13.7391 8.69824 13.7632 8.55602 13.7473 8.41545C13.7313 8.27488 13.6759 8.14169 13.5875 8.03125L10.9625 4.75ZM2.25 7.75V1.75H11.4375L9.4125 4.28125C9.306 4.41427 9.24797 4.5796 9.24797 4.75C9.24797 4.92041 9.306 5.08573 9.4125 5.21875L11.4375 7.75H2.25Z"
+                                        fill="#FFCA0E" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="new_task_create_buttons">
+                            <div class="cancle_new_task_create_button">
+                                Cancel
+                            </div>
+                            <div class="add_new_task_create_button">
+                                Add task
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <script src="/js/app.js"></script>
+</body>
+
+</html>

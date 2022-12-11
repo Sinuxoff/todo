@@ -1,0 +1,335 @@
+@import url(task.css);
+
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+
+}
+
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+
+.task_manager {
+    animation: fadeIn 2s;
+    max-width: 1000px;
+    max-height: 620px;
+    margin: 0 auto;
+    margin-top: 75px;
+
+}
+
+.create_new_task_body {
+    margin-top: 15px;
+    max-width: 150px;
+    margin-left: auto;
+    margin-bottom: 15px;
+}
+
+.create_new_task_container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.16);
+    border-radius: 10px;
+}
+
+.create_new_task_container:first-child {
+    padding-left: 5px;
+}
+
+.create_new_task_container:hover {
+    transition: .3s;
+    background: #1CA329;
+
+}
+
+.create_new_task_container:hover {
+    background: #1CA329;
+    transition: .3s;
+
+}
+
+.create_new_task_container:hover .add_new_task_button path {
+    fill: #fff;
+    transition: .3s;
+}
+
+.create_new_task_container:hover .new_task_text {
+    color: #fff;
+    transition: .3s;
+}
+
+.todolist_Body {
+    max-height: 620px;
+    min-height: 620px;
+    background: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.16);
+    border-radius: 30px;
+    padding: 25px 75px 55px 75px
+}
+
+.todolist_container {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+}
+
+.task_List_Day {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-items: flex-end;
+
+}
+
+.list_Day {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 38px;
+    color: #000000;
+    margin-right: 5px;
+}
+
+.curentDayDate {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 38px;
+    color: #7c7c7c;
+    padding-bottom: 7px;
+}
+
+.task_Body {
+    border-bottom: 1px solid #F1F1F1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    animation: fadeIn 2s;
+}
+
+.task_checkbox {
+    width: 15px;
+    height: 15px;
+    margin-top: 21px;
+    margin-right: 10px;
+    margin-left: 15px;
+    color: #1CA329;
+}
+
+.task {
+    display: flex;
+
+}
+
+.task_name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+}
+
+.task_desription {
+    max-width: 700px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #8f8f8f;
+}
+
+.task_deadline {
+    font-weight: 500;
+    font-size: 12px;
+    color: #1CA329;
+}
+
+.task_Delete_Button {
+    margin-left: 8px;
+    margin-right: 15px;
+}
+
+/* buttons hover effects */
+
+.task_Body:hover .task_buttons .task_Edit_Button path {
+    fill: #1CA329;
+    transition: .3s;
+}
+
+.task_Body:hover .task_buttons .task_Delete_Button path {
+    fill: #B6002C;
+    transition: .3s;
+}
+
+.task_Delete_Button:hover,
+.task_Edit_Button:hover {
+    transition: .3s;
+    transform: scale(1.3);
+}
+
+/* buttons hover effects */
+
+.task_Body:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.06);
+    transition: .5s;
+    /* transform: scale(1.01); */
+}
+
+
+.add_new_task {
+    align-items: center;
+    display: flex;
+}
+
+.new_task_text {
+    margin-left: 12px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 15px;
+    color: #6b6b6b;
+}
+
+.add_new_task_button {
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.add_new_task_button:hover {
+    background: #1CA329;
+    transition: .3s;
+}
+
+.add_new_task_button:hover.add_new_task_button path {
+    transition: .3s;
+    fill: #fff;
+}
+
+
+
+/* Create New task */
+.new_task_create_window_body {
+    transition: .2s;
+    height: auto;
+    max-width: 1000px;
+    display: none;
+    margin-bottom: 25px;
+
+}
+
+.change_task_window_body {
+    display: block;
+    transition: .2s;
+    height: auto;
+    max-width: 1000px;
+
+}
+
+.new_task_create_window_container,
+.change_task_window_container {
+    position: relative;
+    height: 110%;
+    border: 1px solid #9B9B9B;
+    border-radius: 15px;
+    padding: 18px;
+    max-width: 1000px;
+}
+
+.change_task_window_container {
+    background: #fff;
+}
+
+.TaskNameSet {
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.TaskDesriptionSet {
+    width: 100%;
+    padding: 0 0 10px 0;
+    border: none;
+    background: transparent;
+    outline: none;
+}
+
+.TaskDaySet {
+    margin-top: 5px;
+    padding: 5px;
+    border: 0.5px solid #B4B4B4;
+    border-radius: 3px;
+    color: #B4B4B4;
+}
+
+.setPriority {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 8px;
+    margin: 15px;
+    background: none;
+    outline: none;
+    border: none;
+    fill: #000000;
+}
+
+.setPriority:hover {
+    transition: .2s;
+    transform: scale(1.01);
+    background: #21bd31;
+    transform: scale(1.2);
+    border-radius: 25px;
+}
+
+.SetPrioriry svg {
+    pointer-events: none;
+}
+
+.new_task_create_buttons,
+.change_task_buttons {
+    display: flex;
+    margin-top: 12px;
+
+}
+
+.cancle_new_task_create_button,
+.cancle_change_task_button {
+    cursor: pointer;
+    border: 0.5px solid #B4B4B4;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 25px 0px 25px;
+    margin-right: 15px;
+}
+
+.add_new_task_create_button,
+.add_change_task_button {
+    cursor: pointer;
+    border: 0.5px solid #B4B4B4;
+    border-radius: 5px;
+    text-align: center;
+    padding: 5px 25px 5px 25px;
+    background: #1CA329;
+    color: #F1F1F1;
+}
+
+.cancle_new_task_create_button:hover {
+    transition: .2s;
+    transform: scale(1.02);
+    background: #ff0055;
+    color: #fff;
+}
+
+.add_new_task_create_button:hover {
+    transition: .2s;
+    transform: scale(1.02);
+    background: #21bd31;
+}
