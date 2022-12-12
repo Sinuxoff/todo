@@ -11,30 +11,34 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,800;1,900&display=swap"
         rel="stylesheet">
-    <title>ToDo Application</title>
+    <title>ToDo</title>
 </head>
-    
+
 <body>
     <div class="task_manager">
-        <div class="create_new_task_body">
-            <div class="create_new_task_container">
-                <svg class="add_new_task_button" width="15" height="15" viewBox="0 0 10 10" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M9.28571 5.71429H5.71429V9.28571C5.71429 9.47515 5.63903 9.65684 5.50508 9.79079C5.37112 9.92475 5.18944 10 5 10C4.81056 10 4.62888 9.92475 4.49492 9.79079C4.36097 9.65684 4.28571 9.47515 4.28571 9.28571V5.71429H0.714286C0.524845 5.71429 0.343164 5.63903 0.20921 5.50508C0.075255 5.37112 0 5.18944 0 5C0 4.81056 0.075255 4.62888 0.20921 4.49492C0.343164 4.36097 0.524845 4.28571 0.714286 4.28571H4.28571V0.714286C4.28571 0.524845 4.36097 0.343164 4.49492 0.209209C4.62888 0.0752547 4.81056 0 5 0C5.18944 0 5.37112 0.0752547 5.50508 0.209209C5.63903 0.343164 5.71429 0.524845 5.71429 0.714286V4.28571H9.28571C9.47515 4.28571 9.65684 4.36097 9.79079 4.49492C9.92475 4.62888 10 4.81056 10 5C10 5.18944 9.92475 5.37112 9.79079 5.50508C9.65684 5.63903 9.47515 5.71429 9.28571 5.71429V5.71429Z"
-                        fill="#1CA329" />
-                </svg>
-                <p class="new_task_text">
-                    Add a task
-                </p>
+        <div class="header-menu">
+            <div class="todayToDo_container">
+                <span class="todayToDo"></span>
             </div>
-
+            <div class="create_new_task_body">
+                <div class="create_new_task_container">
+                    <svg class="add_new_task_button" width="15" height="15" viewBox="0 0 10 10" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9.28571 5.71429H5.71429V9.28571C5.71429 9.47515 5.63903 9.65684 5.50508 9.79079C5.37112 9.92475 5.18944 10 5 10C4.81056 10 4.62888 9.92475 4.49492 9.79079C4.36097 9.65684 4.28571 9.47515 4.28571 9.28571V5.71429H0.714286C0.524845 5.71429 0.343164 5.63903 0.20921 5.50508C0.075255 5.37112 0 5.18944 0 5C0 4.81056 0.075255 4.62888 0.20921 4.49492C0.343164 4.36097 0.524845 4.28571 0.714286 4.28571H4.28571V0.714286C4.28571 0.524845 4.36097 0.343164 4.49492 0.209209C4.62888 0.0752547 4.81056 0 5 0C5.18944 0 5.37112 0.0752547 5.50508 0.209209C5.63903 0.343164 5.71429 0.524845 5.71429 0.714286V4.28571H9.28571C9.47515 4.28571 9.65684 4.36097 9.79079 4.49492C9.92475 4.62888 10 4.81056 10 5C10 5.18944 9.92475 5.37112 9.79079 5.50508C9.65684 5.63903 9.47515 5.71429 9.28571 5.71429V5.71429Z"
+                            fill="#1CA329" />
+                    </svg>
+                    <p class="new_task_text">
+                        Add a task
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="todolist_Body">
             <div class="todolist_container">
                 <div class="task_List_Day">
                     <p class="list_Day">
-                        Today
+                        ToDo
                     </p>
                     <p class="curentDayDate">
 
@@ -59,7 +63,11 @@
                         <div class="new_task_create_window_container">
                             <input placeholder="Task name" type="text" class="TaskNameSet">
                             <input placeholder="Desription (optional)" type="text" class="TaskDesriptionSet">
-                            <input class="TaskDaySet" type="date">
+                                <div class="deadlineSetings">
+                                    <input value="" class="TaskDaySet" type="date">
+                                    <input type="time" class="TaskTimeSet">
+                                    <button class="setTodayButton">Today</button>
+                                </div>
                             <!-- <input type="time" class="TaskTimeSet"> -->
                             <button title="Set Prioriry" class="setPriority"><svg class="setPriorityIcon" width="20"
                                     height="20" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +91,60 @@
                 </div>
             </div>
         </div>
-        <script src="./js/app.js"></script>
+        <script type="module" src="/js/app.js"></script>
 </body>
 
 </html>
+
+
+
+<!-- Calendar Prototype---------------------- -->
+
+
+        <!-- <div class="taskCalendarContainer">
+            
+            
+        </div> -->
+        <!-- <div class="calendarBody">
+            <div id="container">
+                <div id="header">
+                  <div id="monthDisplay"></div>
+                  <div>
+                    <button id="backButton">Back</button>
+                    <button id="nextButton">Next</button>
+                  </div>
+                </div>
+          
+                <div id="weekdays">
+                  <div>Sunday</div>
+                  <div>Monday</div>
+                  <div>Tuesday</div>
+                  <div>Wednesday</div>
+                  <div>Thursday</div>
+                  <div>Friday</div>
+                  <div>Saturday</div>
+                </div>
+          
+                <div id="calendar"></div>
+              </div>
+        </div>
+      
+          <div id="newEventModal">
+            <h2>New Event</h2>
+      
+            <input id="eventTitleInput" placeholder="Event Title" />
+      
+            <button id="saveButton">Save</button>
+            <button id="cancelButton">Cancel</button>
+          </div>
+      
+          <div id="deleteEventModal">
+            <h2>Event</h2>
+      
+            <p id="eventText"></p>
+      
+            <button id="deleteButton">Delete</button>
+            <button id="closeButton">Close</button>
+          </div>
+      
+          <div id="modalBackDrop"></div> -->
