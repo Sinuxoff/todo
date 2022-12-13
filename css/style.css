@@ -424,6 +424,10 @@ body {
     /* background: linear-gradient(90deg, rgba(182, 0, 44, 0.09) 0.53%, rgba(22, 255, 171, 0) 32.57%); */
 
 }
+.selected {
+  background: #dcfedf;
+  border-radius: 5px;
+}
 
 .task-change_pop-up {
     display: block;
