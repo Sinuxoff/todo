@@ -60,7 +60,7 @@ function addTask(event) {
     } else {
         const TaskNameSet = TaskName.value
         const TaskDesriptionSet = TaskDesription.value
-        let TaskDaySet = TaskDay.value
+        let TaskDaySet = TaskDay.value  
         let TaskTimeSet = TaskTime.value
 
 
@@ -87,6 +87,7 @@ function addTask(event) {
         TaskMakerWindow.style.display = 'none'
         SaveTolocalStorage()
         TodayCheck() 
+        
     }
 }
 
@@ -229,7 +230,7 @@ function renderTask(task) {
     const MakePriority = task.Priority ? "Priority" : ""
     const MakeToday = task.Today ? "display: block;" : "display: none;"
     const cssClass = task.done ? "task_Body task_Body--done" : "task_Body"
-    const taskHtml = ` <div id="${task.id}" class="${cssClass} ">
+    const taskHtml = ` <div id="${task.id}" draggable="true" class="${cssClass} ">
     <div class="task">
        <input class="task_checkbox" type="radio"> 
        <div class="task_text">
@@ -278,8 +279,68 @@ let deadlineCaledar = tasks.filter(function(item,index,array){
 function TodayCheck() {
     var todayToDo = document.querySelector(".todayToDo")
     todayToDo.innerHTML = "Today "+ deadlineCaledar.length + " task to do"
-    console.log(deadlineCaledar.length)
 }
+
+TodayCheck() 
+
+const tasksListElement = document.querySelector(`.tasks_list`);
+const taskElements = tasksListElement.querySelectorAll(`.task_Body`);
+
+tasksListElement.addEventListener(`dragstart`, (evt) => {
+    evt.target.classList.add(`selected`);
+  })
+  tasksListElement.addEventListener(`dragend`, (evt) => {
+    evt.target.classList.remove(`selected`);
+  });
+  tasksListElement.addEventListener(`dragover`, (evt) => {
+    evt.preventDefault();
+    const activeElement = tasksListElement.querySelector(`.selected`);
+    // Находим элемент, над которым в данный момент находится курсор
+    const currentElement = evt.target;
+    const isMoveable = activeElement !== currentElement &&
+      currentElement.classList.contains(`task_Body`);
+    if (!isMoveable) {
+      return;
+    }
+    const nextElement = (currentElement === activeElement.nextElementSibling) ?
+        currentElement.nextElementSibling :
+        currentElement;
+    tasksListElement.insertBefore(activeElement, nextElement);
+  });
+
+  const getNextElement = (cursorPosition, currentElement) => {
+    const currentElementCoord = currentElement.getBoundingClientRect();
+    const currentElementCenter = currentElementCoord.y + currentElementCoord.height / 2;
+    const nextElement = (cursorPosition < currentElementCenter) ?
+        currentElement :
+        currentElement.nextElementSibling;
+  
+    return nextElement;
+  };
+
+  tasksListElement.addEventListener(`dragover`, (evt) => {
+    evt.preventDefault();
+  
+    const activeElement = tasksListElement.querySelector(`.selected`);
+    const currentElement = evt.target;
+    const isMoveable = activeElement !== currentElement &&
+      currentElement.classList.contains(`task_Body`);
+  
+    if (!isMoveable) {
+      return;
+    }
+    const nextElement = getNextElement(evt.clientY, currentElement);
+  
+    if (
+      nextElement && 
+      activeElement === nextElement.previousElementSibling ||
+      activeElement === nextElement
+    ) {
+      return;
+    }
+  
+    tasksListElement.insertBefore(activeElement, nextElement);
+});
 
 
 // Calendar Protype-------------------- 
@@ -420,7 +481,3 @@ function TodayCheck() {
 
 // initButtons();
 // load();
-
-
-TodayCheck() 
-
